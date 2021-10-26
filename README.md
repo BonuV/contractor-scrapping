@@ -1,2 +1,2 @@
 # contractor-scrapping
-extract contractor details from different database
+extract contractor details from different states 
