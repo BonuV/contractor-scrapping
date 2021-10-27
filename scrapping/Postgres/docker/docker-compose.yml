@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: ubuntu/postgres:latest
+    user: postgres
+    profiles: ["debug"]
+    hostname: localhost
+    ports:
+      - "8001:5432"
+    env_file:
+      - config.env
+    volumes:
+      - ../data:/home/ubuntu
