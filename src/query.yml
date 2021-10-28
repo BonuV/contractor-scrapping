@@ -1,0 +1,40 @@
+arizona_upload:
+  query: >
+    INSERT INTO arizona_contractors VALUES(
+      %%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s,%%s
+      )
+      on conflict ON constraint arizona_contactors_pkey
+      DO UPDATE
+      SET business_name=EXCLUDED.business_name,
+          doing_business_as =EXCLUDED.doing_business_as,
+          address=EXCLUDED.address,
+          address2 =EXCLUDED.address2,
+          city =EXCLUDED.city ,
+          state =EXCLUDED.state,
+          zip =EXCLUDED.zip ,
+          qualifying_party =EXCLUDED.qualifying_party ,
+          class=EXCLUDED.class,
+          class_detail=EXCLUDED .class_detail,
+          class_type=EXCLUDED.class_type ,
+          issued_date=EXCLUDED.issued_date,
+          expiration_date=EXCLUDED.expiration_date,
+          status=EXCLUDED.status;
+
+
+nashville_upload:
+  query: >
+    INSERT INTO nashville_contractors VALUES(
+      %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s
+      )
+      on conflict ON constraint nashville_contactors_pkey
+      DO UPDATE
+      SET address=EXCLUDED.address,
+          city =EXCLUDED.city,
+          state=EXCLUDED.state,
+          zip =EXCLUDED.zip,
+          phone =EXCLUDED.phone,
+          fax =EXCLUDED.fax,
+          alternate_phone =EXCLUDED.alternate_phone ,
+          email =EXCLUDED.email ,
+          last_permit_date=EXCLUDED.last_permit_date,
+          mapped_location=EXCLUDED.mapped_location;

@@ -1,0 +1,15 @@
+STATE:
+   TN:
+     - Resource_point: https://data.nashville.gov/api/views
+       name: Registered Professional Contractors
+       download_file_name: nashville_contractors.csv
+       query_name: nashville_upload
+       date_columns:
+                - Last Permit Date
+   AZ:
+     - Resource_point: https://roc.az.gov/sites/default/files/ROC_Posting-List_2021-10-28.csv
+       download_file_name: arizona_contractors.csv
+       query_name: arizona_upload
+       date_columns:
+                - Expiration Date
+                - Issued Date
